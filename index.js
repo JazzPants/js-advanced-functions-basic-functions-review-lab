@@ -47,22 +47,27 @@ console.log(Calculator.divide(21, 3))
 console.log(Calculator.add("hello", "world"))
 
 
-function actionApplyer(x = 0, []) {
-  if (x = 0) {
-    return x
+function actionApplyer(startPoint, array) {
+  let a = startPoint;
+
+  for (let i = 0; i < array.length; i++ ) {
+    a = array[i](a) //finds function of index i, then passes variable a inside
   }
-  else if (x > 0) {
-    return
-  }
+  return a //return the final value of a
 }
 
+//use loop to go through array of functions
+//3 functions, indexes at 0,1,2, length is 3
 let arrayOfTransforms = [
+  //anonymous function with index 0
   function(a) {
     return a * 2
   },
+    //anonymous function with index 1
   function(a) {
     return a + 1000
   },
+    //anonymous function with index 2
   function(a) {
     return a % 7
   }
