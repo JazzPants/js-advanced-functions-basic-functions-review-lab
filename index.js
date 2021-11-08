@@ -27,7 +27,49 @@ function wrapAdjective(x = "*") {
 
 console.log(wrapAdjective("/")("cool")) //=> "You are %a dedicated programmer%!"
 
-let storedFunction = Calculator()
+
+const Calculator = {
+  add: function(a, b) {
+    return a + b //should convert to a number (take strings and turn them into a number)
+  },
+  subtract: function(a, b) {
+    return a - b
+  },
+  multiply: function(a, b) {
+    return a * b
+  },
+  divide: function(a, b) {
+    return a/b
+  },
+};
+
+console.log(Calculator.divide(21, 3))
+console.log(Calculator.add("hello", "world"))
+
+
+function actionApplyer(x = 0, []) {
+  if (x = 0) {
+    return x
+  }
+  else if (x > 0) {
+    return
+  }
+}
+
+let arrayOfTransforms = [
+  function(a) {
+    return a * 2
+  },
+  function(a) {
+    return a + 1000
+  },
+  function(a) {
+    return a % 7
+  }
+]
+
+console.log(actionApplyer(13, arrayOfTransforms))
+
 /*
 nested function example
 function outer(greeting, msg="It's a fine day to learn") {
